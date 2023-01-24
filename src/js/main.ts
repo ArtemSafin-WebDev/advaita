@@ -11,8 +11,6 @@ import areasSlider from "./areasSlider";
 import menu from "./menu";
 
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("Hello from TS");
-
   partnersSlider();
   select();
   intro();

@@ -44,6 +44,9 @@
         history.scrollRestoration = "manual";
       }
       window.scrollY = 0;
+    } else {
+      console.log("Media", window.matchMedia("(max-width: 640px)").matches);
+      console.log("IntroName", introName);
     }
 
     let transitionStarted = false;
@@ -69,9 +72,6 @@
           const introNamePosition =
             introName.getBoundingClientRect().top + window.pageYOffset;
           const loaderNamePosition = loaderName.getBoundingClientRect().top;
-
-          console.log("Intro name position", introNamePosition);
-          console.log("Loader name position", loaderNamePosition);
 
           function handleTransitionEnd() {
             loaderName.removeEventListener(
@@ -104,7 +104,6 @@
           const { x } = getTranslateValues(letter);
 
           if (x == 0) {
-            console.log("X is ZERO");
             letter.classList.add("exit");
             paused = true;
 
@@ -121,7 +120,6 @@
     }
 
     function handleLoad() {
-      console.log("Site loaded");
       handleLetters();
     }
 

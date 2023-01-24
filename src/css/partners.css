@@ -234,7 +234,6 @@
 
 .partners__list {
   @media (--desktop) {
-    animation: ticker 15s infinite linear;
     flex-shrink: 0;
     width: auto;
     box-sizing: border-box;
