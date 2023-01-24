@@ -1,0 +1,149 @@
+<div class="loader ">
+    <div class="loader__backplate">
+
+    </div>
+    <div class="loader__inner">
+        <div class="loader__name">
+            <div class="loader__name-letter">
+                <img src="/name/A.svg" alt="" class="loader__name-letter-image enter">
+            </div>
+            <div class="loader__name-letter">
+                <img src="/name/D.svg" alt="" class="loader__name-letter-image enter">
+            </div>
+            <div class="loader__name-letter">
+                <img src="/name/V.svg" alt="" class="loader__name-letter-image enter">
+            </div>
+            <div class="loader__name-letter">
+                <img src="/name/A.svg" alt="" class="loader__name-letter-image enter">
+            </div>
+            <div class="loader__name-letter">
+                <img src="/name/I.svg" alt="" class="loader__name-letter-image enter">
+            </div>
+            <div class="loader__name-letter">
+                <img src="/name/T.svg" alt="" class="loader__name-letter-image enter">
+            </div>
+            <div class="loader__name-letter">
+                <img src="/name/A.svg" alt="" class="loader__name-letter-image enter">
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .loader {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 400;
+        display: grid;
+        grid-template-columns:
+            [main-start] 1fr [content-start] minmax(0, var(--container-width, 0)) [content-end] 1fr [main-end];
+        grid-gap: var(--content-padding, 0);
+        color: white;
+    }
+
+    .loader.hidden {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .4s, visibility 0s linear .4s;
+    }
+
+    .loader__backplate {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        background-color: rgb(30, 30, 30);
+    }
+
+
+    .loader__backplate.hidden {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .4s, visibility 0s linear .4s;
+    }
+
+    .loader__inner {
+        grid-column-start: content-start;
+        grid-column-end: content-end;
+        grid-row: 1 / 2;
+        align-self: flex-end;
+        margin-bottom: 4rem;
+        z-index: 2;
+    }
+
+    .loader__name {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 3rem;
+        transition: transform .7s ease-in-out;
+    }
+
+    .loader__name-letter {
+        width: 20rem;
+        overflow: hidden;
+    }
+
+    .loader__name-letter-image {
+        display: block;
+        width: 100%;
+        height: auto;
+
+    }
+
+    .loader__name-letter-image.enter {
+        animation-name: letter-animation;
+        animation-iteration-count: infinite;
+        animation-duration: 1.8s;
+    }
+
+    .loader__name-letter-image.exit {
+
+        animation-play-state: paused;
+    }
+
+    @keyframes letter-animation {
+        0% {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+
+        40% {
+            transform: translateX(0%);
+            opacity: 1;
+        }
+
+        60% {
+            transform: translateX(0%);
+            opacity: 1;
+        }
+
+
+        100% {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+    }
+
+
+    @media (max-width: 640px) {
+        .loader__backplate {
+            background-color: #1f47f3;
+        }
+
+        .loader__inner {
+            margin-bottom: 3rem;
+        }
+
+        .loader__name {
+            gap: .8rem;
+        }
+
+        .loader__name-letter {
+            width: 4.3rem;
+        }
+    }
+</style>
+
+<script src="/js/loader.js" defer=""></script>
