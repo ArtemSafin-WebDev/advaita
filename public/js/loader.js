@@ -42,15 +42,6 @@
     console.log("Media", window.matchMedia("(max-width: 640px)").matches);
     console.log("IntroName", introName);
 
-    if (!window.matchMedia("(max-width: 640px)").matches && introName) {
-      if (window.history.scrollRestoration) {
-        window.history.scrollRestoration = "manual";
-        console.log("Setting scroll restoration");
-      }
-      window.scrollY = 0;
-      console.log("Setting scroll top");
-    }
-
     let transitionStarted = false;
 
     function handleTransition() {
