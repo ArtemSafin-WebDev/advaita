@@ -43,8 +43,8 @@
     console.log("IntroName", introName);
 
     if (!window.matchMedia("(max-width: 640px)").matches && introName) {
-      if (history.scrollRestoration) {
-        history.scrollRestoration = "manual";
+      if (window.history.scrollRestoration) {
+        window.history.scrollRestoration = "manual";
       }
       window.scrollY = 0;
     }
