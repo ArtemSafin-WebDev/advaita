@@ -39,14 +39,14 @@
     document.documentElement.style.overflow = "hidden";
     document.body.style.overflow = "hidden";
 
+    console.log("Media", window.matchMedia("(max-width: 640px)").matches);
+    console.log("IntroName", introName);
+
     if (!window.matchMedia("(max-width: 640px)").matches && introName) {
       if (history.scrollRestoration) {
         history.scrollRestoration = "manual";
       }
       window.scrollY = 0;
-    } else {
-      console.log("Media", window.matchMedia("(max-width: 640px)").matches);
-      console.log("IntroName", introName);
     }
 
     let transitionStarted = false;
