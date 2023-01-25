@@ -11,6 +11,12 @@
   position: relative;
   z-index: 1;
 
+  & *::selection {
+    color: var(--primary-color);
+    background-color: white;
+    -webkit-text-fill-color: var(--primary-color);
+  }
+
   @media (--mobile) {
     padding-top: 6rem;
     padding-bottom: 5rem;

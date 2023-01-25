@@ -17,6 +17,23 @@
   }
 }
 
+.page-header--blue {
+  color: var(--primary-color);
+
+  @media (--mobile) {
+    &::after {
+      content: "";
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: #abbbfe;
+      position: absolute;
+      pointer-events: none;
+      bottom: 0;
+    }
+  }
+}
+
 .animatable .page-header {
   @media (--desktop) {
     animation-name: slide-in;
@@ -95,6 +112,13 @@
   }
 }
 
+.page-header--blue .page-header__menu {
+  @media (--mobile) {
+    background-color: white;
+    color: var(--primary-color);
+  }
+}
+
 .mobile-menu-open .page-header__menu {
   @media (--mobile) {
     opacity: 1;
@@ -133,6 +157,16 @@
 
     &:first-child {
       border-top: 1px solid #abbbfe;
+    }
+  }
+}
+
+.page-header--blue .page-header__nav-list-item {
+  @media (--mobile) {
+    border-bottom: 1px solid #1f47f3;
+
+    &:first-child {
+      border-top: 1px solid #1f47f3;
     }
   }
 }

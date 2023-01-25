@@ -1,7 +1,11 @@
-<header class="page-header">
+<header class="page-header {{#if blueHeader}} page-header--blue {{/if}}">
     <div class="page-header__content">
         <a href="#" class="page-header__logo">
-            <img src="/logo.svg" alt="Лого" class="page-header__logo-image" width="40">
+            {{#if blueHeader}}
+                <img src="/logo-blue.svg" alt="Лого" class="page-header__logo-image" width="40">
+            {{else}}
+                <img src="/logo.svg" alt="Лого" class="page-header__logo-image" width="40">
+            {{/if}}
         </a>
         <div class="page-header__menu">
             <nav class="page-header__nav">
@@ -21,7 +25,7 @@
                         </a>
                     </li>
                     <li class="page-header__nav-list-item">
-                        <a href="#" class="page-header__nav-link" data-text="Contacts">
+                        <a href="/contacts.html" class="page-header__nav-link" data-text="Contacts">
                             <span class="page-header__nav-link-text">
                                 Contacts
                             </span>
