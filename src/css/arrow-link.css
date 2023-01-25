@@ -39,6 +39,11 @@
 
   color: var(--text-color);
 
+  &:link,
+  &:visited {
+    color: var(--text-color);
+  }
+
   & .arrow-link__arrow {
     border-color: rgba(176, 176, 176, 0.2);
   }
