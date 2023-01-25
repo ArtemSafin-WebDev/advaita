@@ -1,0 +1,13 @@
+.service-image {
+  margin-bottom: 15rem;
+
+  @media (--mobile) {
+    display: none;
+  }
+}
+
+.service-image__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
