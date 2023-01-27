@@ -27,6 +27,7 @@
   text-align: center;
   color: var(--primary-color);
   font-family: var(--supply);
+  user-select: none;
   @media (--mobile) {
     font-style: normal;
     font-weight: 400;

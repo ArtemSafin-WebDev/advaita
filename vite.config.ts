@@ -5,6 +5,15 @@ import pagesConfig from "./pages.config";
 import globalContext from "./pages-data/globalContext";
 
 export default {
+  build: {
+    rollupOptions: {
+      output: {
+        entryFileNames: `assets/[name].js`,
+        chunkFileNames: `assets/[name].js`,
+        assetFileNames: `assets/[name].[ext]`,
+      },
+    },
+  },
   server: {
     host: true,
   },
