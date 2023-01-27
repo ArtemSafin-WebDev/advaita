@@ -12,6 +12,13 @@ export default {
         chunkFileNames: `assets/[name].js`,
         assetFileNames: `assets/[name].[ext]`,
       },
+      input: {
+        main: "./index.html",
+        contacts: "./contacts.html",
+        products: "./products.html",
+        service: "./service.html",
+        notFound: "./not-found.html",
+      },
     },
   },
   server: {
