@@ -48,6 +48,33 @@
     border-color: rgba(176, 176, 176, 0.2);
   }
 }
+.arrow-link--filled-blue {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+
+  color: white;
+
+  &:link,
+  &:visited {
+    color: white;
+  }
+
+  & .arrow-link__arrow {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+
+      color: white;
+      & .arrow-link__arrow {
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+    }
+  }
+}
 
 .arrow-link--filled-white[disabled] {
   color: #b0b0b0;

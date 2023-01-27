@@ -1,4 +1,4 @@
-<section class="contact-form">
+<section class="contact-form js-contact-form">
     <div class="contact-form__content">
         <div class="contact-form__left-col">
             <h2 class="contact-form__heading">
@@ -17,7 +17,7 @@
                         <label class="contact-form__form-label">
                             Interested in
                         </label>
-                        <div class="contact-form__form-select js-select">
+                        <div class="contact-form__form-select js-select" data-required-select="">
                             <button class="contact-form__form-select-btn js-select-btn" type="button">
                                 <span class="contact-form__form-select-btn-text js-select-btn-text">
                                     Choose
@@ -138,6 +138,32 @@
                     </span>
                 </button>
             </form>
+        </div>
+    </div>
+    <div class="contact-form__success">
+        <div class="contact-form__success-inner">
+            <button class="contact-form__success-close">
+                close
+                <svg width="14" height="14" aria-hidden="true">
+                    <use xlink:href="#cross"></use>
+                </svg>
+            </button>
+            <h3 class="contact-form__success-heading">
+                your request has<br> been received
+            </h3>
+            <div class="contact-form__success-text">
+                We will get back to you soon
+            </div>
+            <a href="#" class="arrow-link arrow-link--filled-blue contact-form__success-link">
+                <div class="arrow-link__text">
+                    READ MORE
+                </div>
+                <div class="arrow-link__arrow">
+                    <svg width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#arrow-right"></use>
+                    </svg>
+                </div>
+            </a>
         </div>
     </div>
 </section>

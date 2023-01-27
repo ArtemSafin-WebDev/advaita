@@ -200,3 +200,11 @@
     line-height: 130%;
   }
 }
+
+.products-catalog__not-found {
+  font-family: var(--supply);
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-top: 2rem;
+  color: var(--primary-color);
+}

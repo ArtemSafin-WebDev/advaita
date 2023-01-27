@@ -9,6 +9,7 @@ import officesSlider from "./officesSlider";
 import productsSlider from "./productsSlider";
 import areasSlider from "./areasSlider";
 import menu from "./menu";
+import contactForm from "./contactForm";
 
 document.addEventListener("DOMContentLoaded", () => {
   partnersSlider();
@@ -19,4 +20,5 @@ document.addEventListener("DOMContentLoaded", () => {
   productsSlider();
   areasSlider();
   menu();
+  contactForm();
 });
