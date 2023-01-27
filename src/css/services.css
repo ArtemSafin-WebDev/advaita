@@ -23,7 +23,7 @@
   height: 100%;
   object-fit: cover;
 
-  mask-image: url("/mask.svg");
+  mask-image: url("../mask.svg");
   mask-position: 50% 50%;
   mask-size: auto 50%;
   mask-repeat: no-repeat;
