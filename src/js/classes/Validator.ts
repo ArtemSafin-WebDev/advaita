@@ -62,7 +62,6 @@ class Validator {
     }
 
     if (field.matches('[type="email"]') && value) {
-      console.log("Validating email");
       if (!isEmail(value)) {
         this.errors.push({
           element: field,
@@ -81,7 +80,6 @@ class Validator {
 
   placeErrorMessage(container: HTMLElement, error: ValidationError | null) {
     const currentMessage = container.querySelector(".validation-error");
-    console.log(currentMessage, error);
     if (currentMessage && error === null) {
       currentMessage.remove();
     } else if (currentMessage && error !== null) {

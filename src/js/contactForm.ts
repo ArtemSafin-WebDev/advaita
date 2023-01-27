@@ -1,6 +1,6 @@
 import axios from "axios";
-import Modal from "./Modal";
-import Validator from "./Validator";
+import Modal from "./classes/Modal";
+import Validator from "./classes/Validator";
 
 function contactForm(selector = ".js-contact-form") {
   const elements: HTMLElement[] = Array.from(
@@ -15,13 +15,22 @@ function contactForm(selector = ".js-contact-form") {
     const closeModalBtn = element.querySelector<HTMLButtonElement>(
       ".contact-form__success-close"
     );
+
+    const readMoreBtn = element.querySelector<HTMLButtonElement>(
+      ".contact-form__success-link"
+    );
+
     const controller = new AbortController();
     if (!form) return;
+
+    const buttons = [closeModalBtn, readMoreBtn];
 
     const validator = new Validator(form);
     let successModal: Modal | null = null;
     if (modal) {
-      successModal = new Modal(modal, closeModalBtn);
+      successModal = new Modal(modal, {
+        closeButton: buttons,
+      });
     }
     form.addEventListener("submit", (event: SubmitEvent) => {
       event.preventDefault();
