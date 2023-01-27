@@ -39,7 +39,8 @@ function contactForm(selector = ".js-contact-form") {
           })
           .then((res) => {
             console.log(res.data);
-            if (successModal) {
+            if (res.data.status === "mail_sent" && successModal) {
+              form.reset();
               successModal.openModal();
             }
           })

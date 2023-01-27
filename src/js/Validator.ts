@@ -45,6 +45,10 @@ class Validator {
         });
       });
     });
+
+    this.form.addEventListener("reset", () => {
+      this.reset();
+    });
   }
 
   validateTextField(field: HTMLInputElement): ValidationError | null {
@@ -138,6 +142,14 @@ class Validator {
     });
 
     return this.errors.length === 0;
+  }
+
+  reset() {
+    this.errors = [];
+    this.hasBeenValidated = false;
+    this.form
+      .querySelectorAll(".validation-error")
+      .forEach((message) => message.remove());
   }
 
   get valid(): boolean {
