@@ -27,6 +27,43 @@ function intro(selector: string = ".js-intro") {
         duration: 1,
         y: () => element.offsetHeight * 0.3,
       });
+
+      const textContent: HTMLElement = element.querySelector(
+        ".intro__text-content"
+      );
+      const introContent: HTMLElement =
+        element.querySelector(".intro__content");
+      // const bottomRow: HTMLElement =
+      //   element.querySelector(".intro__bottom-row");
+      ScrollTrigger.create({
+        trigger: textContent,
+        start: "top top+=20",
+        pin: true,
+        pinSpacing: false,
+        end: () => {
+          const contentHeight = introContent.offsetHeight;
+          const paddingTop = parseFloat(
+            window
+              .getComputedStyle(introContent, null)
+              .getPropertyValue("padding-top")
+          );
+          const paddingBottom = parseFloat(
+            window
+              .getComputedStyle(introContent, null)
+              .getPropertyValue("padding-bottom")
+          );
+          const textContentHeight = textContent.offsetHeight;
+
+          console.log(
+            contentHeight,
+            paddingTop,
+            paddingBottom,
+            textContentHeight
+          );
+
+          return contentHeight - paddingTop - paddingBottom - textContentHeight;
+        },
+      });
     });
   });
 }

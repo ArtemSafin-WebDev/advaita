@@ -8,6 +8,12 @@
   background-color: var(--primary-color);
   color: white;
 
+  & *::selection {
+    color: var(--primary-color);
+    background-color: white;
+    -webkit-text-fill-color: var(--primary-color);
+  }
+
   @media (--mobile) {
     padding: 7rem 0;
     overflow: hidden;
@@ -166,6 +172,9 @@
     justify-self: flex-start;
     margin-left: 4rem;
     margin-bottom: -4rem;
+    transform: scaleY(0);
+    user-select: none;
+    -webkit-user-drag: none;
   }
 
   @media (--mobile) {

@@ -1,4 +1,8 @@
 import isEmail from "validator/es/lib/isEmail";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface ValidationError {
   element: HTMLInputElement | HTMLElement;
@@ -90,6 +94,12 @@ class Validator {
       newMessage.textContent = error.message;
       container.appendChild(newMessage);
     }
+
+    this.updateHeight();
+  }
+
+  updateHeight() {
+    ScrollTrigger.refresh();
   }
 
   showTextFieldMessage(

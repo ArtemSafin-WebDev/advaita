@@ -7,9 +7,13 @@
 
   <body>
     {{> loader }}
-    <main class="page-main">
-      {{> not-found }}
-    </main>
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <main class="page-main">
+          {{> not-found }}
+        </main>
+      </div>
+    </div>
     <script type="module" src="/src/js/main.ts"></script>
   </body>
 

@@ -9,14 +9,14 @@ function contactForm(selector = ".js-contact-form") {
 
   elements.forEach((element) => {
     const form = element.querySelector<HTMLFormElement>("form");
-    const modal = element.querySelector<HTMLDivElement>(
+    const modal = document.querySelector<HTMLDivElement>(
       ".contact-form__success"
     );
-    const closeModalBtn = element.querySelector<HTMLButtonElement>(
+    const closeModalBtn = modal.querySelector<HTMLButtonElement>(
       ".contact-form__success-close"
     );
 
-    const readMoreBtn = element.querySelector<HTMLButtonElement>(
+    const readMoreBtn = modal.querySelector<HTMLButtonElement>(
       ".contact-form__success-link"
     );
 

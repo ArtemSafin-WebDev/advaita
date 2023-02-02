@@ -7,14 +7,14 @@ function partnersSlider(selector: string = ".js-partners-slider"): void {
     document.querySelectorAll(selector)
   );
 
-  function setTickerAnimation(item: HTMLElement): void {
-    gsap.to(item, {
-      ease: "none",
-      xPercent: -100,
-      duration: 25,
-      repeat: -1,
-    });
-  }
+  // function setTickerAnimation(item: HTMLElement): void {
+  //   gsap.to(item, {
+  //     ease: "none",
+  //     xPercent: -100,
+  //     duration: 15,
+  //     repeat: -1,
+  //   });
+  // }
 
   elements.forEach((element) => {
     const list = element.querySelector<HTMLUListElement>(".partners__list");
@@ -66,8 +66,8 @@ function partnersSlider(selector: string = ".js-partners-slider"): void {
           if (parent) {
             parent.append(clone);
           }
-          setTickerAnimation(list);
-          setTickerAnimation(listClone);
+          // setTickerAnimation(list);
+          // setTickerAnimation(listClone);
         }
       }
     };

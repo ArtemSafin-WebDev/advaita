@@ -7,13 +7,18 @@
 
   <body>
     {{> loader }}
-    {{> header }}
-    <main class="page-main">
-      {{> contacts-intro }}
-      {{> offices }}
-      {{> contact-form }}
-    </main>
-    {{> footer }}
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        {{> header }}
+        <main class="page-main">
+          {{> contacts-intro }}
+          {{> offices }}
+          {{> contact-form }}
+        </main>
+        {{> footer }}
+      </div>
+    </div>
+    {{> contact-form-success }}
     <script type="module" src="/src/js/main.ts"></script>
   </body>
 

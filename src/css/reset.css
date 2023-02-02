@@ -16,6 +16,10 @@ html {
     font-size: clamp(2px, 0.6vw, 125px);
   }
 
+  @media (min-width: 1920px) {
+    font-size: clamp(2px, 0.6vw, 125px);
+  }
+
   @media (--mobile) {
     font-size: 10px;
   }

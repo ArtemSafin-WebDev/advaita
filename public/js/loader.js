@@ -27,6 +27,14 @@
     }
   }
 
+  function disableScroll() {
+    document.documentElement.classList.add("no-scroll");
+  }
+
+  function enableScroll() {
+    document.documentElement.classList.remove("no-scroll");
+  }
+
   const loader = document.querySelector(".loader");
   if (loader) {
     const loaderLetters = Array.from(
@@ -36,25 +44,23 @@
     const loaderName = loader.querySelector(".loader__name");
     const introName = document.querySelector(".intro__name");
 
-    document.documentElement.style.overflow = "hidden";
-    document.body.style.overflow = "hidden";
+    disableScroll();
 
-    console.log("Media", window.matchMedia("(max-width: 640px)").matches);
+    console.log("Media", window.matchMedia("(max-width: 1024px)").matches);
     console.log("IntroName", introName);
 
     let transitionStarted = false;
 
     function handleTransition() {
       transitionStarted = true;
-      const isMobile = window.matchMedia("(max-width: 640px)").matches;
+      const isMobile = window.matchMedia("(max-width: 1024px)").matches;
 
       if (isMobile || !introName) {
         setTimeout(() => {
           loader.classList.add("hidden");
 
           document.body.classList.add("loader-hidden");
-          document.documentElement.style.overflow = "";
-          document.body.style.overflow = "";
+          enableScroll();
           document.body.classList.add("animatable");
         }, 200);
       } else {
@@ -74,8 +80,7 @@
             loader.classList.add("hidden");
             document.body.classList.add("animatable");
             setTimeout(() => {
-              document.documentElement.style.overflow = "";
-              document.body.style.overflow = "";
+              enableScroll();
             }, 500);
           }
 

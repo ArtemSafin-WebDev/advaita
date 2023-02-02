@@ -134,8 +134,11 @@
   font-size: 1.4rem;
   line-height: 1.6rem;
   text-transform: uppercase;
+
   @media (--desktop) {
     grid-column: 4 / 5;
+    justify-self: flex-end;
+    margin-right: 1.34rem;
   }
 
   @media (--mobile) {
@@ -193,6 +196,7 @@
   @media (--desktop) {
     grid-column: 4 / 5;
     transition: color 0.2s;
+    justify-self: flex-end;
     @media (hover: hover) {
       &:hover {
         color: var(--primary-color);

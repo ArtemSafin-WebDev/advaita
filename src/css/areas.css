@@ -24,6 +24,14 @@
   }
 }
 
+.areas__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+
 .areas__image {
   @media (--desktop) {
     left: 0;
@@ -165,7 +173,7 @@
     font-family: var(--supply);
     padding-bottom: 3rem;
     margin-bottom: 1rem;
-    border-bottom: 1px dashed #abbbfe;
+    border-bottom: 1px dashed rgba(171, 187, 254, 0.5);
     text-transform: uppercase;
   }
 

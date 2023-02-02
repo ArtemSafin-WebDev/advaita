@@ -30,6 +30,20 @@
 </div>
 
 <style>
+    .no-scroll {
+        overflow-y: scroll;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+    }
+
+    .no-scroll body {
+        height: auto;
+        overflow: hidden;
+    }
+
     .loader {
         position: fixed;
         left: 0;
@@ -42,6 +56,7 @@
             [main-start] 1fr [content-start] minmax(0, var(--container-width, 0)) [content-end] 1fr [main-end];
         grid-gap: var(--content-padding, 0);
         color: white;
+
     }
 
     .loader.hidden {
@@ -53,7 +68,7 @@
     .loader__backplate {
         grid-column: 1 / -1;
         grid-row: 1 / 2;
-        background-color: rgb(30, 30, 30);
+        background-color: #1f47f3;
     }
 
 
@@ -128,9 +143,7 @@
 
 
     @media (max-width: 640px) {
-        .loader__backplate {
-            background-color: #1f47f3;
-        }
+
 
         .loader__inner {
             margin-bottom: 3rem;

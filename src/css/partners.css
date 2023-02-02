@@ -164,14 +164,6 @@
       width: 17.4rem;
     }
   }
-
-  @media (hover: hover) {
-    &:hover {
-      & .partners__list {
-        animation-play-state: paused;
-      }
-    }
-  }
 }
 
 .partners__slider-card-image-container {
@@ -237,5 +229,6 @@
     flex-shrink: 0;
     width: auto;
     box-sizing: border-box;
+    animation: ticker 15s linear infinite;
   }
 }

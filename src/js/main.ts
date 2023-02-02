@@ -10,6 +10,10 @@ import productsSlider from "./productsSlider";
 import areasSlider from "./areasSlider";
 import menu from "./menu";
 import contactForm from "./contactForm";
+import areas from "./areas";
+import productsShowMore from "./productsShowMore";
+import smoothScrolling from "./smoothScrolling";
+import brokerage from "./brokerage";
 
 document.addEventListener("DOMContentLoaded", () => {
   partnersSlider();
@@ -21,4 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
   areasSlider();
   menu();
   contactForm();
+  areas();
+  productsShowMore();
+  smoothScrolling();
+  brokerage();
 });

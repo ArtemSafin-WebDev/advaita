@@ -7,16 +7,21 @@
 
     <body>
         {{> loader }}
-        {{> header }}
-        <main class="page-main">
-            {{> service-intro }}
-            {{> service-image }}
-            {{> service-finance }}
-            {{> service-brokerage }}
-            {{> service-trading }}
-            {{> contact-form }}
-        </main>
-        {{> footer }}
+        <div id="smooth-wrapper">
+            <div id="smooth-content">
+                {{> header }}
+                <main class="page-main">
+                    {{> service-intro }}
+                    {{> service-image }}
+                    {{> service-finance }}
+                    {{> service-brokerage }}
+                    {{> service-trading }}
+                    {{> contact-form }}
+                </main>
+                {{> footer }}
+            </div>
+        </div>
+        {{> contact-form-success }}
         <script type="module" src="/src/js/main.ts"></script>
     </body>
 
