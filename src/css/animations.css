@@ -47,3 +47,46 @@
     transform: translateX(-100%);
   }
 }
+
+@keyframes upper-circle {
+  0% {
+    transform: translateY(0%);
+  }
+
+  10% {
+    transform: translateY(34%);
+  }
+
+  55% {
+    transform: translateY(34%);
+  }
+
+  65% {
+    transform: translateY(0%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+@keyframes lower-circle {
+  0% {
+    transform: translateY(0%);
+  }
+
+  10% {
+    transform: translateY(-34%);
+  }
+
+  55% {
+    transform: translateY(-34%);
+  }
+
+  65% {
+    transform: translateY(0%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}

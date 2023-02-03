@@ -132,7 +132,7 @@
   }
 
   @media (--mobile) {
-    border-top: 1px solid #b0b0b0;
+    border-top: 1px solid rgba(176, 176, 176, 0.4);
   }
 }
 

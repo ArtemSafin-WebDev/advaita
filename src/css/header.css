@@ -115,6 +115,13 @@
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.4s, visibility 0s linear 0.4s;
+    gap: 2rem;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-gap: 2rem;
+    grid-template-rows: 1fr auto 1fr;
+    grid-template-areas: "empty" "nav" "bottom";
   }
 }
 
@@ -133,6 +140,7 @@
 
   @media (--mobile) {
     margin: auto 0;
+    grid-area: nav;
   }
 }
 
@@ -329,5 +337,44 @@
     opacity: 1;
     visibility: inherit;
     transition: opacity 0.2s, visibility 0.2s;
+  }
+}
+
+.page-header__contacts {
+  @media (--desktop) {
+    display: none;
+  }
+
+  @media (--mobile) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    color: #353535;
+    text-transform: uppercase;
+    text-align: center;
+    flex-shrink: 0;
+
+    &:link,
+    &:visited {
+      color: #353535;
+    }
+  }
+}
+
+.page-header__menu-bottom-wrapper {
+  display: contents;
+
+  @media (--mobile) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+    grid-area: bottom;
+    justify-content: flex-end;
   }
 }

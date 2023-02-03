@@ -80,8 +80,29 @@
   margin-top: auto;
   width: 3.1rem;
 
+  & svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
   @media (--mobile) {
     display: none;
+  }
+}
+
+.contact-form__circles svg {
+  & circle:nth-child(1) {
+    animation-name: upper-circle;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+  }
+  & circle:nth-child(2) {
+    animation-name: lower-circle;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
   }
 }
 
