@@ -1,6 +1,7 @@
 import Swiper, { SwiperOptions } from "swiper";
 import "swiper/css";
 import Modal from "./classes/Modal";
+import gsap from "gsap";
 
 export default function productModal() {
   const productModal: HTMLElement = document.querySelector(".product-modal");
@@ -51,6 +52,10 @@ export default function productModal() {
 
   const modalInstance = new Modal(productModal, {
     closeButton: productModalCloseBtn,
+    onClose: (modal) => {
+      const content = modal.querySelector(".product-modal__content");
+      content.innerHTML = "";
+    },
   });
 
   const productsCards: HTMLLinkElement[] = Array.from(
@@ -108,7 +113,26 @@ export default function productModal() {
             ".product-modal__content"
           );
 
-          currentModalContent.replaceWith(modalContent);
+          if (currentModalContent.children.length) {
+            gsap
+              .to(currentModalContent, {
+                autoAlpha: 0,
+                duration: 0.4,
+              })
+              .then(() => {
+                currentModalContent.replaceWith(modalContent);
+                gsap.from(modalContent, {
+                  autoAlpha: 0,
+                  duration: 0.4,
+                });
+              });
+          } else {
+            currentModalContent.replaceWith(modalContent);
+            gsap.from(modalContent, {
+              autoAlpha: 0,
+              duration: 0.4,
+            });
+          }
 
           console.log("Next page HTML", modalContent);
         })

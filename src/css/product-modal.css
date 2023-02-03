@@ -132,6 +132,8 @@ body:not(.loader-hidden) .product-modal {
 
   &.active {
     background: white;
+    pointer-events: none;
+    cursor: default;
   }
   @media (hover: hover) {
     &:hover {

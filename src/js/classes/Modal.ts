@@ -3,16 +3,26 @@ import { clearAllBodyScrollLocks, disableBodyScroll } from "body-scroll-lock";
 interface ModalOptions {
   closeButton?: HTMLButtonElement | (HTMLButtonElement | null)[];
   openButton?: HTMLButtonElement | (HTMLButtonElement | null)[];
+  onClose?: (modal: HTMLElement) => void;
+  onOpen?: (modal: HTMLElement) => void;
 }
 
 class Modal {
   private modal;
   private options?;
   public open: boolean = false;
+  private onClose: (modal: HTMLElement) => void;
+  private onOpen: (modal: HTMLElement) => void;
   constructor(modal: HTMLElement, options?: ModalOptions) {
     this.modal = modal;
     this.options = options;
     this.setHandlers();
+    if (this.options.onClose) {
+      this.onClose = this.options.onClose;
+    }
+    if (this.options.onOpen) {
+      this.onOpen = this.options.onOpen;
+    }
   }
 
   public openModal(): void {
@@ -22,6 +32,11 @@ class Modal {
       reserveScrollBarGap: true,
     });
     this.open = true;
+
+    if (this.onOpen) {
+      console.log("On open callback");
+      this.onOpen(this.modal);
+    }
   }
 
   public closeModal(): void {
@@ -29,6 +44,11 @@ class Modal {
     this.modal.classList.remove("active");
     clearAllBodyScrollLocks();
     this.open = false;
+
+    if (this.onClose) {
+      console.log("On close callback");
+      this.onClose(this.modal);
+    }
   }
 
   private setHandlers() {
