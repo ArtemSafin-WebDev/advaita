@@ -11,7 +11,7 @@ export default function productModal() {
   if (!productModal) return;
 
   const productModalSlides: HTMLElement[] = Array.from(
-    productModal.querySelectorAll(".product-modal__slider-card")
+    productModal.querySelectorAll(".swiper-slide")
   );
 
   const sliderContainer: HTMLElement = productModal.querySelector(".swiper");
