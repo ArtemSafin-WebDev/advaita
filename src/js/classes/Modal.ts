@@ -7,22 +7,24 @@ interface ModalOptions {
 
 class Modal {
   private modal;
-  private options;
+  private options?;
   public open: boolean = false;
-  constructor(modal: HTMLElement, options: ModalOptions) {
+  constructor(modal: HTMLElement, options?: ModalOptions) {
     this.modal = modal;
     this.options = options;
     this.setHandlers();
   }
 
-  openModal(): void {
+  public openModal(): void {
     if (this.open) return;
     this.modal.classList.add("active");
-    disableBodyScroll(this.modal);
+    disableBodyScroll(this.modal, {
+      reserveScrollBarGap: true,
+    });
     this.open = true;
   }
 
-  closeModal(): void {
+  public closeModal(): void {
     if (!this.open) return;
     this.modal.classList.remove("active");
     clearAllBodyScrollLocks();
@@ -30,7 +32,7 @@ class Modal {
   }
 
   private setHandlers() {
-    if (this.options.closeButton) {
+    if (this.options?.closeButton) {
       if (Array.isArray(this.options.closeButton)) {
         this.options.closeButton.forEach((btn) => {
           if (btn !== null) {
@@ -41,7 +43,7 @@ class Modal {
           }
         });
       } else {
-        this.options.closeButton.addEventListener(
+        this.options?.closeButton.addEventListener(
           "click",
           (event: MouseEvent) => {
             event.preventDefault();
@@ -50,7 +52,7 @@ class Modal {
         );
       }
     }
-    if (this.options.openButton) {
+    if (this.options?.openButton) {
       if (Array.isArray(this.options.openButton)) {
         this.options.openButton.forEach((btn) => {
           if (btn !== null) {
@@ -61,7 +63,7 @@ class Modal {
           }
         });
       } else {
-        this.options.openButton.addEventListener(
+        this.options?.openButton.addEventListener(
           "click",
           (event: MouseEvent) => {
             event.preventDefault();

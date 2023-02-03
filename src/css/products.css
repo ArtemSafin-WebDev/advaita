@@ -231,6 +231,7 @@
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     position: relative;
+    aspect-ratio: 1 / 1;
   }
 }
 

@@ -10,18 +10,42 @@ function services(selector: string = ".js-services") {
 
   elements.forEach((element) => {
     const bgImage = element.querySelector(".services__bg-image");
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: element,
-        start: "center center",
-        end: "bottom bottom",
-        scrub: true,
-      },
+    const content = element.querySelector(".services__content");
+
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 641px)", () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: element,
+          start: "top top",
+          end: () => `top+=${window.innerHeight * 2} top`,
+          markers: false,
+          scrub: true,
+          pin: true,
+          pinSpacing: true,
+        },
+      });
+
+      tl.to(bgImage, {
+        maskSize: "auto 1500%",
+        duration: 1,
+        ease: "power2.in",
+      }).to(content, {
+        autoAlpha: 1,
+        duration: 0.5,
+      });
     });
 
-    tl.to(bgImage, {
-      maskSize: "auto 1500%",
-      duration: 1,
+    mm.add("(max-width: 640px)", () => {
+      ScrollTrigger.create({
+        trigger: element,
+        start: "top bottom",
+        end: "bottom top",
+        onEnter: () => {
+          element.classList.add("revealed");
+        },
+      });
     });
   });
 }

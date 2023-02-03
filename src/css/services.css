@@ -28,11 +28,13 @@
   mask-size: auto 50%;
   mask-repeat: no-repeat;
 
-  animation-name: services-mask;
-  animation-duration: 3s;
-  animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.7, 0, 0.84, 0);
-  animation-play-state: paused;
+  @media (--mobile) {
+    animation-name: services-mask;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.7, 0, 0.84, 0);
+    animation-play-state: paused;
+  }
 }
 
 .services__content {
@@ -44,12 +46,7 @@
   padding-bottom: 5rem;
   opacity: 0;
   visibility: hidden;
-  animation-name: services-fade-in;
-  animation-duration: 0.5s;
-  animation-delay: 3s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-out;
-  animation-play-state: paused;
+
   @media (--desktop) {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -60,20 +57,28 @@
     display: flex;
     flex-direction: column;
     gap: 4rem;
+    animation-name: services-fade-in;
+    animation-duration: 0.5s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-play-state: paused;
   }
 }
 
-.services.revealed {
-  & .services__content,
-  & .services__bg-image {
-    animation-play-state: running;
+@media (--mobile) {
+  .services.revealed {
+    & .services__content,
+    & .services__bg-image {
+      animation-play-state: running;
+    }
   }
 }
 
 .services__heading {
   font-style: normal;
   font-weight: 400;
-  font-size: 25rem;
+  font-size: 20rem;
   line-height: 90%;
   text-transform: uppercase;
   font-family: var(--supply);

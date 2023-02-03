@@ -249,7 +249,7 @@
 
   scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
   scrollbar-width: thin;
-  max-height: 40rem;
+  max-height: 35rem;
   overflow-x: hidden;
 
   &::-webkit-scrollbar {
@@ -343,6 +343,10 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.4s, visibility 0s linear 0.4s;
+
+  &:not(.active) {
+    right: calc(-1 * var(--sb-width, 0));
+  }
 
   &.active {
     opacity: 1;

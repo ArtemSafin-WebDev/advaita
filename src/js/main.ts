@@ -14,8 +14,14 @@ import areas from "./areas";
 import productsShowMore from "./productsShowMore";
 import smoothScrolling from "./smoothScrolling";
 import brokerage from "./brokerage";
+import services from "./services";
+import equilizer from "./equilizer";
+import plane from "./plane";
+import productModal from "./productModal";
+import setScrollbarWidth from "./setScrollbarWidth";
 
 document.addEventListener("DOMContentLoaded", () => {
+  setScrollbarWidth();
   partnersSlider();
   select();
   intro();
@@ -29,4 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
   productsShowMore();
   smoothScrolling();
   brokerage();
+  services();
+  equilizer();
+  plane();
+  productModal();
 });

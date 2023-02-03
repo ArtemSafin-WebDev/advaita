@@ -174,6 +174,7 @@
   }
 }
 
+.service-trading__plane,
 .service-trading__image {
   @media (--desktop) {
     grid-column: 1 / 2;
@@ -190,5 +191,48 @@
     max-width: none;
     margin-left: 4rem;
     margin-top: -3.5rem;
+  }
+}
+
+.service-trading__plane {
+  aspect-ratio: 724 / 458;
+
+  position: relative;
+
+  & svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  & img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+.service-trading__plane-icon {
+  width: 4rem;
+  height: 4rem;
+
+  position: absolute;
+
+  @media (--mobile) {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  & svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    fill: #1f47f3;
+    transform: rotate(90deg);
   }
 }

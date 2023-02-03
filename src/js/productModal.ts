@@ -1,0 +1,107 @@
+import Swiper, { SwiperOptions } from "swiper";
+import "swiper/css";
+import Modal from "./classes/Modal";
+
+export default function productModal() {
+  const productModal: HTMLElement = document.querySelector(".product-modal");
+  const productModalCloseBtn: HTMLButtonElement = document.querySelector(
+    ".product-modal__close"
+  );
+
+  if (!productModal) return;
+
+  const productModalSlides: HTMLElement[] = Array.from(
+    productModal.querySelectorAll(".product-modal__slider-card")
+  );
+
+  const sliderContainer: HTMLElement = productModal.querySelector(".swiper");
+  let sliderInstance: Swiper | null = null;
+
+  const options: SwiperOptions = {
+    slidesPerView: "auto",
+    centeredSlides: true,
+    loop: true,
+    direction: "vertical",
+    loopedSlides: 10,
+  };
+
+  if (sliderContainer) {
+    const mql = window.matchMedia("(max-width: 640px)");
+
+    const handleWidthChange = (e: MediaQueryListEvent | MediaQueryList) => {
+      if (sliderInstance) {
+        sliderInstance.destroy();
+        sliderInstance = null;
+      }
+      if (e.matches) {
+        sliderInstance = new Swiper(sliderContainer, {
+          ...options,
+          direction: "horizontal",
+        });
+      } else {
+        sliderInstance = new Swiper(sliderContainer, options);
+      }
+    };
+
+    mql.addEventListener("change", handleWidthChange);
+
+    handleWidthChange(mql);
+  }
+
+  const modalInstance = new Modal(productModal, {
+    closeButton: productModalCloseBtn,
+  });
+
+  const productsCards: HTMLLinkElement[] = Array.from(
+    document.querySelectorAll(
+      ".products__card, .products-catalog__card, .product-modal__slider-card"
+    )
+  );
+
+  productsCards.forEach((card) => {
+    card.addEventListener("click", (event) => {
+      event.preventDefault();
+      const href = card.href;
+      if (card.hasAttribute("data-id")) {
+        const id = card.getAttribute("data-id");
+        const sliderIndex = productModalSlides.findIndex(
+          (slide) => slide.getAttribute("data-id") === id
+        );
+        if (sliderIndex !== -1) {
+          sliderInstance.slideToLoop(sliderIndex);
+        }
+      }
+
+      modalInstance.openModal();
+
+      fetch(href)
+        .then((response) => {
+          if (!response.ok) {
+            const error = response.status;
+            return Promise.reject(error);
+          }
+
+          return response.text();
+        })
+        .then((data) => {
+          const parser = new DOMParser();
+          const nextPageHtml = parser.parseFromString(data, "text/html");
+
+          const modalContent = nextPageHtml.querySelector(
+            ".product-modal__content"
+          );
+
+          const currentModalContent = document.querySelector(
+            ".product-modal__content"
+          );
+
+          currentModalContent.replaceWith(modalContent);
+
+          console.log("Next page HTML", modalContent);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    });
+  });
+}
