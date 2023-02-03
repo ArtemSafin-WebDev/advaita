@@ -87,6 +87,20 @@ body:not(.loader-hidden) .product-modal {
   @media (--desktop) {
     position: absolute;
     inset: 0;
+
+    & .swiper-slide {
+      margin: 0;
+      margin-top: 0.6rem;
+
+      &:last-child {
+        margin-bottom: 0.6rem;
+      }
+    }
+
+    /* & .swiper {
+      overflow: visible;
+      margin: 0.3rem 0;
+    } */
   }
 
   @media (--mobile) {

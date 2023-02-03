@@ -19,10 +19,11 @@ export default function productModal() {
 
   const options: SwiperOptions = {
     slidesPerView: "auto",
-    centeredSlides: true,
-    loop: true,
+    centeredSlides: false,
+    loop: false,
     direction: "vertical",
     loopedSlides: 10,
+    centeredSlidesBounds: true,
   };
 
   if (sliderContainer) {
@@ -65,10 +66,22 @@ export default function productModal() {
       if (card.hasAttribute("data-id")) {
         const id = card.getAttribute("data-id");
         const sliderIndex = productModalSlides.findIndex(
-          (slide) => slide.getAttribute("data-id") === id
+          (slide) =>
+            slide
+              .querySelector(".product-modal__slider-card")
+              .getAttribute("data-id") === id
         );
+        productsCards.forEach((card) => {
+          const cardId = card.getAttribute("data-id");
+          if (cardId !== id) {
+            card.classList.remove("active");
+          } else {
+            card.classList.add("active");
+          }
+        });
+
         if (sliderIndex !== -1) {
-          sliderInstance.slideToLoop(sliderIndex);
+          sliderInstance.slideTo(sliderIndex);
         }
       }
 
