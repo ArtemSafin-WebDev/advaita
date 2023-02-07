@@ -251,5 +251,12 @@
     width: auto;
     box-sizing: border-box;
     animation: ticker 15s linear infinite;
+    animation-play-state: paused;
+  }
+}
+
+.animatable .partners__list {
+  @media (--desktop) {
+    animation-play-state: running;
   }
 }
