@@ -9,8 +9,8 @@
   overflow: hidden;
 
   @media (--mobile) {
-    padding-top: 7rem;
-    padding-bottom: 10rem;
+    padding-top: 0;
+    padding-bottom: 7rem;
     position: relative;
   }
 }
