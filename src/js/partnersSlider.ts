@@ -1,19 +1,10 @@
 import Swiper, { SwiperOptions, Autoplay } from "swiper";
 import "swiper/css";
-import gsap from "gsap";
 
 function partnersSlider(selector: string = ".js-partners-slider"): void {
   const elements: HTMLElement[] = Array.from(
     document.querySelectorAll(selector)
   );
-
-  const resetAnimation = (el: HTMLElement) => {
-    el.style.animation = "none";
-    el.offsetHeight;
-    requestAnimationFrame(() => {
-      el.style.animation = "";
-    });
-  };
 
   elements.forEach((element) => {
     const list = element.querySelector<HTMLUListElement>(".partners__list");
@@ -38,14 +29,9 @@ function partnersSlider(selector: string = ".js-partners-slider"): void {
       if (e.matches) {
         console.log("Media Query Matched!");
         if (listClone) {
-          gsap.killTweensOf(listClone);
-          gsap.killTweensOf(list);
-          gsap.set(listClone, {
-            clearProps: "all",
-          });
-          gsap.set(list, {
-            clearProps: "all",
-          });
+          list.style.animation = "";
+          listClone.style.animation = "";
+
           listClone.remove();
           listClone = null;
         }
@@ -66,8 +52,10 @@ function partnersSlider(selector: string = ".js-partners-slider"): void {
             parent.append(clone);
           }
 
-          resetAnimation(list);
-          resetAnimation(clone);
+          requestAnimationFrame(() => {
+            list.style.animation = "ticker 15s linear infinite";
+            listClone.style.animation = "ticker 15s linear infinite";
+          });
         }
       }
     };

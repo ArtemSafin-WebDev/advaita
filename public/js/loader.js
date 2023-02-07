@@ -35,6 +35,8 @@
     document.documentElement.classList.remove("no-scroll");
   }
 
+  let loadStarted = false;
+
   const loader = document.querySelector(".loader");
   if (loader) {
     const loaderLetters = Array.from(
@@ -118,8 +120,14 @@
     }
 
     function handleLoad() {
+      if (loadStarted) return;
+      loadStarted = true;
       handleLetters();
     }
+
+    setTimeout(() => {
+      handleLoad();
+    }, 2500);
 
     window.addEventListener("load", () => {
       handleLoad();

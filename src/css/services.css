@@ -5,6 +5,10 @@
     [content-end] 1fr [main-end];
   grid-gap: var(--content-padding, 0);
   color: white;
+
+  @media (--desktop) {
+    min-height: min(100vh, 120rem);
+  }
 }
 
 .services__bg {
@@ -51,6 +55,7 @@
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-gap: 1rem;
+    align-self: center;
   }
 
   @media (--mobile) {
