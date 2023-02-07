@@ -2,12 +2,18 @@ import Swiper, { SwiperOptions, Autoplay } from "swiper";
 import "swiper/css";
 import gsap from "gsap";
 
-import sync from "css-animation-sync";
-
 function partnersSlider(selector: string = ".js-partners-slider"): void {
   const elements: HTMLElement[] = Array.from(
     document.querySelectorAll(selector)
   );
+
+  const resetAnimation = (el: HTMLElement) => {
+    el.style.animation = "none";
+    el.offsetHeight;
+    requestAnimationFrame(() => {
+      el.style.animation = "";
+    });
+  };
 
   elements.forEach((element) => {
     const list = element.querySelector<HTMLUListElement>(".partners__list");
@@ -59,9 +65,10 @@ function partnersSlider(selector: string = ".js-partners-slider"): void {
           if (parent) {
             parent.append(clone);
           }
-        }
 
-        sync("ticker");
+          resetAnimation(list);
+          resetAnimation(clone);
+        }
       }
     };
 
