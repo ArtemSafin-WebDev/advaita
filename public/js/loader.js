@@ -128,11 +128,7 @@
     document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
         handleLoad();
-      }, 2500);
-    });
-
-    window.addEventListener("load", () => {
-      handleLoad();
+      }, 500);
     });
   }
 })();
