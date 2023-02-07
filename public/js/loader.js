@@ -125,9 +125,11 @@
       handleLetters();
     }
 
-    setTimeout(() => {
-      handleLoad();
-    }, 2500);
+    document.addEventListener("DOMContentLoaded", () => {
+      setTimeout(() => {
+        handleLoad();
+      }, 2500);
+    });
 
     window.addEventListener("load", () => {
       handleLoad();

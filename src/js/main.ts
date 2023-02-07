@@ -1,7 +1,6 @@
 import "virtual:svg-icons-register";
 import partnersSlider from "./partnersSlider";
 import select from "./select";
-// import "@lottiefiles/lottie-player";
 import "../css/style.css";
 import intro from "./intro";
 import reveal from "./reveal";
