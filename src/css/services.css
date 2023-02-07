@@ -32,7 +32,7 @@
   mask-size: auto 50%;
   mask-repeat: no-repeat;
 
-  @media (--mobile) {
+  @media (orientation: portrait) {
     animation-name: services-mask;
     animation-duration: 3s;
     animation-fill-mode: forwards;
@@ -58,10 +58,7 @@
     align-self: center;
   }
 
-  @media (--mobile) {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
+  @media (orientation: portrait) {
     animation-name: services-fade-in;
     animation-duration: 0.5s;
     animation-delay: 3s;
@@ -69,9 +66,15 @@
     animation-timing-function: ease-out;
     animation-play-state: paused;
   }
+
+  @media (--mobile) {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
 }
 
-@media (--mobile) {
+@media (orientation: portrait) {
   .services.revealed {
     & .services__content,
     & .services__bg-image {

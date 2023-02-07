@@ -14,7 +14,7 @@ function services(selector: string = ".js-services") {
 
     let mm = gsap.matchMedia();
 
-    mm.add("(min-width: 641px)", () => {
+    mm.add("(orientation: landscape)", () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: element,
@@ -37,7 +37,7 @@ function services(selector: string = ".js-services") {
       });
     });
 
-    mm.add("(max-width: 640px)", () => {
+    mm.add("(orientation: portrait)", () => {
       ScrollTrigger.create({
         trigger: element,
         start: "top bottom",
