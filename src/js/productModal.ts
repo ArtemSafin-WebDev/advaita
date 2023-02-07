@@ -1,4 +1,4 @@
-import Swiper, { SwiperOptions } from "swiper";
+import Swiper, { SwiperOptions, Mousewheel } from "swiper";
 import "swiper/css";
 import Modal from "./classes/Modal";
 import gsap from "gsap";
@@ -25,6 +25,8 @@ export default function productModal() {
     direction: "vertical",
     loopedSlides: 10,
     centeredSlidesBounds: true,
+    modules: [Mousewheel],
+    mousewheel: true,
   };
 
   if (sliderContainer) {
