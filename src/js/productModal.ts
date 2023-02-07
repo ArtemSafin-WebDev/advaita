@@ -27,6 +27,7 @@ export default function productModal() {
     centeredSlidesBounds: true,
     modules: [Mousewheel],
     mousewheel: true,
+    threshold: 5,
   };
 
   if (sliderContainer) {
