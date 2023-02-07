@@ -119,20 +119,20 @@ export default function productModal() {
             gsap
               .to(currentModalContent, {
                 autoAlpha: 0,
-                duration: 0.4,
+                duration: 0.2,
               })
               .then(() => {
                 currentModalContent.replaceWith(modalContent);
                 gsap.from(modalContent, {
                   autoAlpha: 0,
-                  duration: 0.4,
+                  duration: 0.2,
                 });
               });
           } else {
             currentModalContent.replaceWith(modalContent);
             gsap.from(modalContent, {
               autoAlpha: 0,
-              duration: 0.4,
+              duration: 0.2,
             });
           }
 
