@@ -251,6 +251,5 @@
     width: auto;
     box-sizing: border-box;
     animation: ticker 15s linear infinite;
-    animation-play-state: paused;
   }
 }
