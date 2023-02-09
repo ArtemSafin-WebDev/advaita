@@ -1,4 +1,5 @@
-import isEmail from "validator/es/lib/isEmail";
+import isAlphanumeric from "validator/es/lib/isAlphanumeric";
+import isNumeric from "validator/es/lib/isNumeric";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -15,6 +16,8 @@ class Validator {
   private selects: HTMLElement[];
   private hasBeenValidated: boolean = false;
   public errors: ValidationError[] = [];
+  private emailRegex =
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
   constructor(form: HTMLFormElement) {
     this.form = form;
@@ -66,10 +69,20 @@ class Validator {
     }
 
     if (field.matches('[type="email"]') && value) {
-      if (!isEmail(value)) {
+      if (!value.match(this.emailRegex)) {
         this.errors.push({
           element: field,
           message: "Enter correct E-mail",
+        });
+      }
+    }
+
+    if (value && field.matches('[data-alphanumeric=""]')) {
+      const cleanedValue = value.replace(/\s/g, "");
+      if (!isAlphanumeric(cleanedValue) || isNumeric(cleanedValue)) {
+        this.errors.push({
+          element: field,
+          message: "Only digits and numbers allowed",
         });
       }
     }
