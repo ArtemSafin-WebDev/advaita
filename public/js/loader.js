@@ -72,7 +72,13 @@
 
           const introNamePosition =
             introName.getBoundingClientRect().top + window.pageYOffset;
+          const introNameWidth = introName.offsetWidth;
           const loaderNamePosition = loaderName.getBoundingClientRect().top;
+          const loaderWidth = loaderName.offsetWidth;
+
+          const scaleFactor = introNameWidth / loaderWidth;
+
+          console.log(scaleFactor);
 
           function handleTransitionEnd() {
             loaderName.removeEventListener(
@@ -89,7 +95,7 @@
           loaderName.addEventListener("transitionend", handleTransitionEnd);
           loaderName.style.transform = `translateY(${
             introNamePosition - loaderNamePosition
-          }px)`;
+          }px) scale(${scaleFactor})`;
         }, 200);
       }
     }
