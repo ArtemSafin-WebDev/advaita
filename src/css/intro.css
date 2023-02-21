@@ -111,6 +111,7 @@
   @media (--desktop) {
     opacity: 0;
     visibility: hidden;
+    margin-top: -0.9rem;
   }
 
   @media (--mobile) {
