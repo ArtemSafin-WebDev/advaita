@@ -43,6 +43,10 @@
   color: var(--primary-color);
   font-family: var(--supply);
 
+  @media (--desktop) {
+    z-index: 30;
+  }
+
   @media (--mobile) {
     font-style: normal;
     font-weight: 400;

@@ -21,7 +21,7 @@
     "vite-plugin-svg-icons": "^2.0.1"
   },
   "browserslist": [
-    "> 1.5%, not dead"
+    "> 0.2%, not dead"
   ],
   "dependencies": {
     "@lottiefiles/lottie-player": "^1.6.3",
