@@ -84,13 +84,14 @@
 }
 
 .services__heading {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20rem;
-  line-height: 90%;
   text-transform: uppercase;
   font-family: var(--supply);
   grid-column: 1 / -1;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12rem;
+  line-height: 90%;
 
   @media (--mobile) {
     font-style: normal;
@@ -163,12 +164,13 @@
 }
 
 .services__info-card-title {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 2.2rem;
-  line-height: 130%;
   text-transform: uppercase;
   font-family: var(--supply);
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 3.2rem;
+  line-height: 120%;
 
   @media (--mobile) {
     font-style: normal;
@@ -181,14 +183,14 @@
 .services__info-text {
   font-style: normal;
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 1.8rem;
   line-height: 2.5rem;
 
   @media (--mobile) {
     font-style: normal;
     font-weight: 400;
-    font-size: 1.3rem;
-    line-height: 1.8rem;
+    font-size: 1.4rem;
+    line-height: 120%;
   }
 }
 

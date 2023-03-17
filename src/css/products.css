@@ -84,9 +84,10 @@
 
 .products__text {
   grid-column: 4 / 5;
+
   font-style: normal;
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 1.8rem;
   line-height: 2.5rem;
 
   @media (--mobile) {

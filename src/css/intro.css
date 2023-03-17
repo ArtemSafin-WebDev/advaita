@@ -164,6 +164,8 @@
   font-size: 1.4rem;
   line-height: 1.6rem;
   text-transform: uppercase;
+
+  display: none;
 }
 
 .intro__contacts {
@@ -171,6 +173,8 @@
   flex-direction: column;
   align-items: flex-end;
   gap: 0.3rem;
+
+  display: none;
 }
 
 .intro__contacts-link {

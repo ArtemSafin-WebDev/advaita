@@ -79,18 +79,20 @@
 }
 
 .products-catalog__text {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 2rem;
-  line-height: 2.5rem;
   grid-column: 2 / 3;
 
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+
   @media (--mobile) {
+    grid-column: 1 / -1;
+
     font-style: normal;
     font-weight: 400;
-    font-size: 1.3rem;
-    line-height: 1.8rem;
-    grid-column: 1 / -1;
+    font-size: 1.4rem;
+    line-height: 120%;
   }
 }
 
@@ -193,6 +195,7 @@
   line-height: 130%;
   text-transform: uppercase;
   text-align: center;
+
   @media (--mobile) {
     font-style: normal;
     font-weight: 400;

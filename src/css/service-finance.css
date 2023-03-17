@@ -93,6 +93,10 @@
   font-family: var(--supply);
   text-transform: uppercase;
 
+  @media (--desktop) {
+    margin-bottom: 5rem;
+  }
+
   @media (--mobile) {
     font-style: normal;
     font-weight: 400;
@@ -118,7 +122,7 @@
 .service-finance__image,
 .service-finance__equilizer {
   grid-column: 1 / 2;
-  width: 47.6rem;
+  width: 44rem;
   height: auto;
 
   @media (--mobile) {
@@ -206,16 +210,17 @@
 }
 
 .service-finance__secondary-text {
+  color: rgba(53, 53, 53, 0.8);
+
   font-style: normal;
   font-weight: 400;
-  font-size: 1.4rem;
-  line-height: 1.8rem;
-  color: rgba(53, 53, 53, 0.8);
+  font-size: 1.8rem;
+  line-height: 2.5rem;
 
   @media (--mobile) {
     font-style: normal;
     font-weight: 400;
-    font-size: 1.3rem;
-    line-height: 1.8rem;
+    font-size: 1.4rem;
+    line-height: 120%;
   }
 }

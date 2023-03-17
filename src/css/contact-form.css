@@ -64,12 +64,13 @@
 }
 
 .contact-form__text {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 2rem;
-  line-height: 2.5rem;
   color: #abbbfe;
   max-width: 66.4rem;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 2.5rem;
 
   @media (--mobile) {
     display: none;
@@ -452,11 +453,12 @@
 }
 
 .contact-form__success-text {
+  margin-bottom: 4rem;
+
   font-style: normal;
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 1.8rem;
   line-height: 2.5rem;
-  margin-bottom: 4rem;
   &:last-child {
     margin-bottom: 0;
   }
@@ -464,7 +466,7 @@
   @media (--mobile) {
     font-style: normal;
     font-weight: 400;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     line-height: 120%;
     margin-bottom: 2.5rem;
   }

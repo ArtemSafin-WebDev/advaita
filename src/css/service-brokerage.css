@@ -150,15 +150,22 @@
   font-size: 1.4rem;
   line-height: 1.8rem;
   color: rgba(255, 255, 255, 0.8);
-  grid-column: 3 / 4;
+  grid-column: 3 / 5;
   grid-row: 2 / 3;
+  max-width: 60rem;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 2.5rem;
 
   @media (--mobile) {
+    color: rgba(171, 187, 254, 0.8);
+
     font-style: normal;
     font-weight: 400;
-    font-size: 1.3rem;
-    line-height: 1.8rem;
-    color: rgba(171, 187, 254, 0.8);
+    font-size: 1.4rem;
+    line-height: 120%;
   }
 }
 

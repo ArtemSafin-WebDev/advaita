@@ -47,6 +47,11 @@
   line-height: 130%;
   font-family: var(--supply);
 
+  font-style: normal;
+  font-weight: 400;
+  font-size: 4.2rem;
+  line-height: 106%;
+
   @media (--desktop) {
     grid-column: 1 / 3;
   }
@@ -94,13 +99,13 @@
 .about__info-text {
   font-style: normal;
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 1.8rem;
   line-height: 2.5rem;
 
   @media (--mobile) {
     font-style: normal;
     font-weight: 400;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     line-height: 120%;
   }
 }
@@ -180,17 +185,18 @@
 }
 
 .about__card-text {
+  max-width: 62rem;
+
   font-style: normal;
   font-weight: 400;
-  font-size: 1.4rem;
-  line-height: 1.8rem;
-  max-width: 62rem;
+  font-size: 1.8rem;
+  line-height: 2.5rem;
 
   @media (--mobile) {
     font-style: normal;
     font-weight: 400;
-    font-size: 1.3rem;
-    line-height: 1.8rem;
+    font-size: 1.4rem;
+    line-height: 120%;
   }
 }
 

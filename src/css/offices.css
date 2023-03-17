@@ -73,10 +73,16 @@
   line-height: 106%;
   text-transform: uppercase;
   color: var(--primary-color);
-  margin-bottom: 10rem;
+  margin-bottom: 4rem;
 
   @media (--mobile) {
     display: none;
+  }
+}
+
+.offices__block:not(:first-child) .offices__secondary-heading {
+  @media (--mobile) {
+    display: block;
   }
 }
 
@@ -98,6 +104,8 @@
     & .swiper-slide {
       width: 16rem;
       margin-right: 0.7rem;
+
+      width: calc(50% - 0.7rem);
       &:last-child {
         margin-right: 0;
       }
@@ -138,13 +146,24 @@
 .offices__card-text {
   font-style: normal;
   font-weight: 400;
-  font-size: 1.4rem;
-  line-height: 1.8rem;
+  font-size: 1.8rem;
+  line-height: 2.5rem;
 
   @media (--mobile) {
     font-style: normal;
     font-weight: 400;
     font-size: 1.2rem;
     line-height: 120%;
+  }
+}
+
+.offices__block {
+  margin-bottom: 10rem;
+
+  @media (--mobile) {
+    margin-bottom: 3rem;
+  }
+  &:last-child {
+    margin-bottom: 0;
   }
 }

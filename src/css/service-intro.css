@@ -82,17 +82,20 @@
 
 .service-intro__text {
   grid-column: 3 / -1;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 2rem;
-  line-height: 2.5rem;
+
   color: rgb(53, 53, 53, 0.8);
 
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+
   @media (--mobile) {
+    grid-column: 1 / -1;
+
     font-style: normal;
     font-weight: 400;
-    font-size: 1.3rem;
-    line-height: 1.8rem;
-    grid-column: 1 / -1;
+    font-size: 1.4rem;
+    line-height: 120%;
   }
 }

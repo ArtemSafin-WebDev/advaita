@@ -198,6 +198,7 @@
   line-height: 130%;
   font-family: var(--supply);
   text-transform: uppercase;
+
   &:last-child {
     margin-bottom: 0;
   }
@@ -211,11 +212,12 @@
 }
 
 .areas__card-text {
+  color: #abbbfe;
+
   font-style: normal;
   font-weight: 400;
-  font-size: 1.4rem;
-  line-height: 1.8rem;
-  color: #abbbfe;
+  font-size: 1.8rem;
+  line-height: 2.5rem;
 
   & > p {
     margin-bottom: 0.4rem;
@@ -243,7 +245,7 @@
         height: 0.25em;
         border-radius: 50%;
         background-color: currentColor;
-        top: 0.5em;
+        top: 0.56em;
       }
     }
   }

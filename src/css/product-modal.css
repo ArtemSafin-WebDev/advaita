@@ -334,8 +334,8 @@ body:not(.loader-hidden) .product-modal {
 .product-modal__text-content {
   font-style: normal;
   font-weight: 400;
-  font-size: 1.4rem;
-  line-height: 1.8rem;
+  font-size: 1.8rem;
+  line-height: 2.5rem;
 
   & h1,
   & h2,
@@ -370,8 +370,8 @@ body:not(.loader-hidden) .product-modal {
   @media (--mobile) {
     font-style: normal;
     font-weight: 400;
-    font-size: 1.3rem;
-    line-height: 1.8rem;
+    font-size: 1.4rem;
+    line-height: 120%;
 
     & h1,
     & h2,
@@ -436,13 +436,13 @@ body:not(.loader-hidden) .product-modal {
 .product-modal__info-card-text {
   font-style: normal;
   font-weight: 400;
-  font-size: 1.4rem;
-  line-height: 1.8rem;
+  font-size: 1.8rem;
+  line-height: 2.5rem;
 
   @media (--mobile) {
     font-style: normal;
     font-weight: 400;
-    font-size: 1.3rem;
-    line-height: 1.8rem;
+    font-size: 1.4rem;
+    line-height: 120%;
   }
 }
