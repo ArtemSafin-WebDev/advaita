@@ -24,6 +24,18 @@ function services(selector: string = ".js-services") {
           scrub: true,
           pin: true,
           pinSpacing: true,
+          onEnter: () => {
+            gsap.to(".services__scroll", {
+              autoAlpha: 0,
+              duration: 0.2,
+            });
+          },
+          onLeaveBack: () => {
+            gsap.to(".services__scroll", {
+              autoAlpha: 1,
+              duration: 0.2,
+            });
+          },
         },
       });
 
