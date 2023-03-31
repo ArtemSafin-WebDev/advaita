@@ -19,7 +19,7 @@ function services(selector: string = ".js-services") {
         scrollTrigger: {
           trigger: element,
           start: "top top",
-          end: () => `top+=${window.innerHeight * 2} top`,
+          end: () => `top+=${window.innerHeight * 6} top`,
           markers: false,
           scrub: true,
           pin: true,

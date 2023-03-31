@@ -110,11 +110,50 @@
 .contact-form__form {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 6rem;
 
   @media (--mobile) {
     gap: 2rem;
   }
+}
+
+.contact-form__form-btn-wrapper {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 2fr);
+  grid-gap: 2rem;
+
+  @media (--mobile) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.contact-form__form-email {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.2rem;
+  line-height: 130%;
+  color: #abbbfe;
+  font-family: var(--supply);
+  text-transform: uppercase;
+  align-self: flex-end;
+  & a {
+    color: #ffffff;
+    &:link,
+    &:visited {
+      color: white;
+    }
+  }
+
+  @media (--mobile) {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 130%;
+  }
+}
+
+.contact-form__submit {
+  justify-self: flex-start;
 }
 
 .contact-form__form-fields {

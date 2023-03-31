@@ -1,0 +1,357 @@
+.service-block {
+  display: grid;
+  grid-template-columns:
+    [main-start] 1fr [content-start] minmax(0, var(--container-width, 0))
+    [content-end] 1fr [main-end];
+  grid-gap: var(--content-padding, 0);
+  padding: 14rem 0;
+  color: var(--primary-color);
+  overflow: hidden;
+  @media (--mobile) {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+.service-block--bottom-short {
+  @media (--desktop) {
+    padding-bottom: 4rem;
+  }
+}
+.service-block--bottom-long {
+  @media (--desktop) {
+    padding-bottom: 24rem;
+  }
+}
+
+.service-block--blue {
+  color: white;
+  background-color: var(--primary-color);
+
+  & *::selection {
+    color: var(--primary-color);
+    background-color: white;
+    -webkit-text-fill-color: var(--primary-color);
+  }
+}
+
+.service-block__content {
+  grid-column-start: content-start;
+  grid-column-end: content-end;
+
+  @media (--desktop) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 1rem;
+  }
+
+  @media (--mobile) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.service-block__left-col {
+  display: flex;
+  flex-direction: column;
+
+  @media (--mobile) {
+    display: contents;
+  }
+}
+.service-block__right-col {
+  display: flex;
+  flex-direction: column;
+  @media (--mobile) {
+    display: contents;
+  }
+}
+
+.service-block__heading {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12rem;
+  line-height: 90%;
+  text-transform: uppercase;
+  font-family: var(--supply);
+
+  @media (--desktop) {
+    z-index: 30;
+  }
+
+  @media (--mobile) {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 4.8rem;
+    line-height: 100%;
+    order: -20;
+  }
+}
+
+.service-block__large-text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 4.2rem;
+  line-height: 106%;
+  font-family: var(--supply);
+  text-transform: uppercase;
+
+  @media (--desktop) {
+    margin-bottom: 10rem;
+  }
+
+  @media (--mobile) {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 130%;
+    order: -5;
+    margin-top: 3.5rem;
+  }
+}
+
+.service-block__large-text--large-margin {
+  @media (--desktop) {
+    margin-bottom: 13rem;
+  }
+}
+.service-block__large-text--extra-large-margin {
+  @media (--desktop) {
+    margin-bottom: 35rem;
+  }
+}
+
+.service-block__stage {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.2rem;
+  line-height: 130%;
+  display: inline;
+  align-items: center;
+  gap: 0.3rem;
+  vertical-align: top;
+  font-family: var(--supply);
+  text-transform: uppercase;
+  color: rgba(31, 71, 243, 0.2);
+  /* margin-top: 0.4em;
+  margin-left: -2em; */
+  white-space: nowrap;
+  margin-left: -3em;
+  position: relative;
+  top: 0.3em;
+  @media (--mobile) {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 130%;
+    margin-left: -1.5em;
+    margin-top: 0.3em;
+  }
+}
+
+.service-block__stage-number.active {
+  color: rgba(31, 71, 243, 1);
+}
+
+.service-block--blue .service-block__stage {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.service-block--blue .service-block__stage-number.active {
+  color: white;
+}
+
+.service-block__info {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 1rem;
+  align-items: flex-start;
+
+  @media (--mobile) {
+    grid-template-columns: minmax(0, 1fr);
+    grid-gap: 2rem;
+    align-items: stretch;
+    margin-top: 3.4rem;
+  }
+}
+
+@media (--desktop) {
+  .service-block__info--auto {
+    margin-top: auto;
+  }
+}
+
+.service-block__info-heading {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  line-height: 130%;
+  font-family: var(--supply);
+
+  @media (--mobile) {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 130%;
+
+    & br {
+      display: none;
+    }
+  }
+}
+
+.service-block__info-text {
+  color: rgba(53, 53, 53, 0.8);
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+
+  @media (--mobile) {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 120%;
+    color: #353535;
+  }
+}
+
+.service-block--blue .service-block__info-text {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.service-block__equilizer {
+  margin-top: auto;
+
+  @media (--mobile) {
+  }
+}
+
+.service-block__gems {
+  width: 49rem;
+  margin-left: 7rem;
+
+  @media (--mobile) {
+    margin-top: 2rem;
+    margin-left: auto;
+    width: 27.8rem;
+  }
+}
+
+.service-block__gems-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: scaleY(0);
+}
+
+.service-block__plane {
+  margin-top: 2.2rem;
+  position: relative;
+
+  @media (--desktop) {
+    width: 100%;
+    height: auto;
+  }
+
+  @media (--mobile) {
+    width: 31.7rem;
+    height: auto;
+    pointer-events: none;
+    flex-shrink: 0;
+    max-width: none;
+    position: relative;
+    right: -5rem;
+    margin-top: -3rem;
+    margin-bottom: -5rem;
+  }
+
+  &::before {
+    content: "";
+    padding-bottom: 63.25%;
+    display: block;
+  }
+
+  & svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  & img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+.service-block__plane-icon {
+  width: 4rem;
+  height: 4rem;
+
+  position: absolute;
+
+  @media (--mobile) {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  & svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    fill: #1f47f3;
+    transform: rotate(90deg);
+  }
+}
+
+.service-block__candles {
+  pointer-events: none;
+  transform-origin: left bottom;
+  @media (--desktop) {
+    margin-top: -8rem;
+    transform: scale(1.2);
+  }
+
+  @media (--mobile) {
+    margin: 0 -15rem;
+    margin-top: -11rem;
+    margin-bottom: -9rem;
+  }
+}
+
+.service-block__candles-image {
+  display: block;
+  width: 100%;
+  user-select: none;
+  -webkit-user-drag: none;
+  transform: scaleY(0);
+}
+
+.service-block__risk {
+  display: block;
+  width: 100%;
+  margin-top: auto;
+  margin-top: 10rem;
+
+  @media (--mobile) {
+    margin-left: auto;
+    width: 28rem;
+    margin-top: 0.4rem;
+    margin-bottom: -3rem;
+  }
+}
+
+.service-block__risk-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: scaleY(0);
+}

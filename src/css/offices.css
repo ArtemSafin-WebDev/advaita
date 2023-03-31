@@ -4,7 +4,7 @@
     [main-start] 1fr [content-start] minmax(0, var(--container-width, 0))
     [content-end] 1fr [main-end];
   grid-gap: var(--content-padding, 0);
-  padding-top: 17rem;
+  padding-top: 13rem;
   padding-bottom: 11rem;
 
   @media (--mobile) {

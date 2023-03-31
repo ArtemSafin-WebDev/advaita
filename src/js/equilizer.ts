@@ -5,11 +5,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 function equilizer() {
   const elements: HTMLElement[] = Array.from(
-    document.querySelectorAll(".service-finance__equilizer")
+    document.querySelectorAll(".equilizer")
   );
 
   elements.forEach((element) => {
-    const groups = Array.from(element.querySelectorAll("g"));
+    const groups = Array.from(element.querySelectorAll(".equilizer__col"));
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: element,
@@ -22,15 +22,17 @@ function equilizer() {
     let startTime = 0;
 
     groups.forEach((group) => {
-      const cells = Array.from(group.querySelectorAll(".eq-cell")).reverse();
+      const cells = Array.from(
+        group.querySelectorAll(".equilizer__cell")
+      ).reverse();
 
       cells.forEach((cell, index) => {
         const position = index === 0 ? startTime : ">";
         tl.to(
           cell,
           {
-            fill: "#abbbfe",
-            duration: 0.07,
+            backgroundColor: "#abbbfe",
+            duration: 0.1,
           },
           position
         );

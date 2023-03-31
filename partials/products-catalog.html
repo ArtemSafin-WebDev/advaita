@@ -1,6 +1,12 @@
 <section class="products-catalog">
-    <div class="products-catalog__content">
-        <div class="products-catalog__top-row">
+    <div class="products-catalog__intro">
+        <div class="products-catalog__intro-bg">
+            <picture>
+                <source srcset="/products-intro-bg-mobile.webp" media="(max-width: 640px)" />
+                <img src="/products-intro-desktop-bg.webp" alt="" class="products-catalog__intro-bg-image" />
+            </picture>
+        </div>
+        <div class="products-catalog__intro-content">
             <h1 class="products-catalog__main-heading">
                 products
             </h1>
@@ -14,21 +20,27 @@
                 that is delivered with higher efficiencies, ensuring low cost.
             </div>
         </div>
-        <ul class="products-catalog__list">
-            {{#each products}}
-                <li class="products-catalog__list-item">
-                    <a href="#" class="products-catalog__card">
-                        <div class="products-catalog__card-image-container">
-                            <img src="{{ src }}" alt="" class="products-catalog__card-image">
-                        </div>
-                        <div class="products-catalog__card-content">
-                            <h3 class="products-catalog__card-title">
-                                {{ title }}
-                            </h3>
-                        </div>
-                    </a>
-                </li>
-            {{/each}}
-        </ul>
+    </div>
+    <div class="products-catalog__content">
+        <div class="products-catalog__content-inner">
+
+
+            <ul class="products-catalog__list">
+                {{#each products}}
+                    <li class="products-catalog__list-item">
+                        <a href="#" class="products-catalog__card">
+                            <div class="products-catalog__card-image-container">
+                                <img src="{{ src }}" alt="" class="products-catalog__card-image">
+                            </div>
+                            <div class="products-catalog__card-content">
+                                <h3 class="products-catalog__card-title">
+                                    {{ title }}
+                                </h3>
+                            </div>
+                        </a>
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
     </div>
 </section>

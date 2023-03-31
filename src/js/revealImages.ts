@@ -3,25 +3,26 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function brokerage(selector = ".service-brokerage") {
-  const elements: HTMLElement[] = Array.from(
+export default function revealImages(selector = ".js-image-to-reveal") {
+  const elements: HTMLImageElement[] = Array.from(
     document.querySelectorAll(selector)
   );
 
   elements.forEach((element) => {
-    const image = element.querySelector(".service-brokerage__image");
+    const block = element.closest(".service-block");
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: element,
+        trigger: block,
         start: "top center",
+        markers: false,
       },
     });
 
-    tl.to(image, {
+    tl.to(element, {
       scaleY: 1,
       duration: 1,
       ease: "power2.out",
-      delay: 0.3,
+      delay: 0,
     });
   });
 }

@@ -1,0 +1,43 @@
+.equilizer {
+  width: 100%;
+  padding-top: 7.7rem;
+
+  @media (--mobile) {
+    padding-top: 1.7rem;
+  }
+}
+
+.equilizer__row {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.2rem;
+
+  @media (--mobile) {
+    gap: 0.4rem;
+    justify-content: flex-end;
+  }
+}
+
+.equilizer__col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 11rem;
+
+  @media (--mobile) {
+    width: 3.8rem;
+    gap: 0.1rem;
+  }
+}
+
+.equilizer__cell {
+  height: 1.5rem;
+  border: 0.5px dashed #abbbfe;
+  border-radius: 0.2rem;
+  background-color: white;
+
+  @media (--mobile) {
+    height: 0.5rem;
+    border-radius: 0.06rem;
+  }
+}

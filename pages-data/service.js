@@ -1,7 +1,7 @@
 const service = {
   "/service.html": {
     title: "Услуги",
-    blueHeader: true,
+    blueHeader: false,
   },
 };
 

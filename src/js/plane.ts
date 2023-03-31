@@ -7,13 +7,13 @@ gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, DrawSVGPlugin);
 
 export default function plane() {
   const elements: HTMLElement[] = Array.from(
-    document.querySelectorAll(".service-trading__plane")
+    document.querySelectorAll(".service-block__plane")
   );
 
   elements.forEach((element) => {
     const path = element.querySelector<SVGPathElement>(".motion-path");
 
-    const planeIcon = document.querySelector(".service-trading__plane-icon");
+    const planeIcon = document.querySelector(".service-block__plane-icon");
 
     gsap.set(planeIcon, {
       xPercent: -50,
@@ -23,7 +23,7 @@ export default function plane() {
 
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: ".service-trading",
+        trigger: element.closest(".service-block"),
         start: "top bottom",
         end: "bottom top",
         scrub: 1,
@@ -39,17 +39,5 @@ export default function plane() {
       duration: 15,
       ease: "none",
     });
-    // .fromTo(
-    //   path,
-    //   {
-    //     drawSVG: "0% 100%",
-    //   },
-    //   {
-    //     drawSVG: "100% 100%",
-    //     ease: "none",
-    //     duration: 15,
-    //   },
-    //   0
-    // );
   });
 }

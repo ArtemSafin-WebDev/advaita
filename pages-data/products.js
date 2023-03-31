@@ -1,7 +1,7 @@
 const products = {
   "/products.html": {
     title: "Каталог",
-    blueHeader: true,
+    blueHeader: false,
     products: [
       {
         src: "/products/1.webp",

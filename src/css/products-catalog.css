@@ -1,59 +1,98 @@
-.products-catalog {
+.products-catalog__content {
   display: grid;
   grid-template-columns:
     [main-start] 1fr [content-start] minmax(0, var(--container-width, 0))
     [content-end] 1fr [main-end];
   grid-gap: var(--content-padding, 0);
-  padding-top: 8rem;
+
   padding-bottom: 10rem;
 
   @media (--mobile) {
-    padding-top: 7rem;
     padding-bottom: 5.6rem;
     overflow: hidden;
   }
 }
 
-.products-catalog__content {
+.products-catalog__content-inner {
   grid-column-start: content-start;
   grid-column-end: content-end;
 }
 
-.products-catalog__top-row {
+.products-catalog__intro {
+  display: grid;
+  grid-template-columns:
+    [main-start] 1fr [content-start] minmax(0, var(--container-width, 0))
+    [content-end] 1fr [main-end];
+  grid-gap: var(--content-padding, 0);
+  color: white;
+  margin-bottom: 14rem;
+
+  @media (--mobile) {
+    margin-bottom: 4rem;
+  }
+}
+
+.products-catalog__intro-bg {
+  grid-column-start: main-start;
+  grid-column-end: main-end;
+  grid-row: 1 / 2;
+  position: relative;
+}
+
+.products-catalog__intro-bg-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.products-catalog__intro-content {
+  grid-column-start: content-start;
+  grid-column-end: content-end;
+  grid-row: 1 / 2;
+  z-index: 10;
   @media (--desktop) {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto 1fr;
     grid-gap: 1rem;
-    grid-row: 3.4rem;
+    grid-row-gap: 3.4rem;
     align-items: flex-start;
-    margin-bottom: 14rem;
+    grid-template-rows: auto auto;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    min-height: 70rem;
+    align-content: flex-start;
   }
 
   @media (--mobile) {
     display: flex;
     flex-direction: column;
-    margin-bottom: 3rem;
+    padding-top: 7rem;
+    padding-bottom: 5rem;
   }
 }
 
 .products-catalog__main-heading {
   grid-column: 1 / -1;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 33.7rem;
-  line-height: 90%;
   text-transform: uppercase;
   font-family: var(--supply);
-  color: var(--primary-color);
-  text-align: center;
+
+  text-align: left;
   user-select: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24.2rem;
+  line-height: 90%;
+
   @media (--mobile) {
     font-style: normal;
     font-weight: 400;
     font-size: 6.6rem;
     line-height: 100%;
     margin-bottom: 3rem;
-    font-size: 18.5vw;
   }
 }
 
@@ -65,7 +104,6 @@
   font-family: var(--supply);
   line-height: 106%;
   text-transform: uppercase;
-  color: var(--primary-color);
 
   @media (--mobile) {
     font-style: normal;

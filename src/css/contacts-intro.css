@@ -24,15 +24,18 @@
   font-size: 33.7rem;
   line-height: 90%;
   text-transform: uppercase;
-  text-align: center;
+  text-align: left;
+  user-select: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24.2rem;
+  line-height: 90%;
   color: var(--primary-color);
   font-family: var(--supply);
-  user-select: none;
   @media (--mobile) {
     font-style: normal;
     font-weight: 400;
     font-size: 6.6rem;
     line-height: 100%;
-    font-size: 18.5vw;
   }
 }

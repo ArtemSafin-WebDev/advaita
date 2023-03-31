@@ -12,7 +12,7 @@ import contactForm from "./contactForm";
 import areas from "./areas";
 import productsShowMore from "./productsShowMore";
 import smoothScrolling from "./smoothScrolling";
-import brokerage from "./brokerage";
+import brokerage from "./revealImages";
 import services from "./services";
 import equilizer from "./equilizer";
 import plane from "./plane";
