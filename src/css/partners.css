@@ -169,10 +169,15 @@
 }
 
 .partners__slider-card-image-container {
-  aspect-ratio: 16 / 9;
   position: relative;
   border: 1px dashed #b0b0b0;
   border-radius: 1rem;
+
+  &::before {
+    content: "";
+    display: block;
+    padding-bottom: 56.25%;
+  }
 }
 
 .partners__slider-card-image {
