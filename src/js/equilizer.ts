@@ -31,7 +31,8 @@ function equilizer() {
         tl.to(
           cell,
           {
-            backgroundColor: "#abbbfe",
+            backgroundColor: "#A5B5FA",
+
             duration: 0.1,
           },
           position

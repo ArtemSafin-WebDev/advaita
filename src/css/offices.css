@@ -4,12 +4,11 @@
     [main-start] 1fr [content-start] minmax(0, var(--container-width, 0))
     [content-end] 1fr [main-end];
   grid-gap: var(--content-padding, 0);
-  padding-top: 13rem;
-  padding-bottom: 11rem;
+
+  margin-bottom: 11rem;
 
   @media (--mobile) {
-    padding: 7rem 0;
-    padding-bottom: 8rem;
+    margin-bottom: 8rem;
     overflow: hidden;
   }
 }

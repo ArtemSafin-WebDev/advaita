@@ -15,7 +15,7 @@
 
 .service-block--bottom-short {
   @media (--desktop) {
-    padding-bottom: 4rem;
+    padding-bottom: 10rem;
   }
 }
 .service-block--bottom-long {
@@ -230,9 +230,9 @@
 }
 
 .service-block__gems {
-  width: 49rem;
-  margin-left: 7rem;
-
+  width: 54.5rem;
+  margin-left: 6.5rem;
+  margin-top: 5rem;
   @media (--mobile) {
     margin-top: 2rem;
     margin-left: auto;

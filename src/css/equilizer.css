@@ -32,9 +32,9 @@
 
 .equilizer__cell {
   height: 1.5rem;
-  border: 0.5px dashed #abbbfe;
+  border: 0.5px dashed #a5b5fa;
   border-radius: 0.2rem;
-  background-color: white;
+  background-color: #1f47f3;
 
   @media (--mobile) {
     height: 0.5rem;

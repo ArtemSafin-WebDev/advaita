@@ -8,6 +8,7 @@
   padding-bottom: 7rem;
   background-color: var(--primary-color);
   color: white;
+  margin-bottom: 14rem;
 
   & *::selection {
     color: var(--primary-color);
@@ -17,6 +18,7 @@
 
   @media (--mobile) {
     padding: 5rem 0;
+    margin-bottom: 7rem;
   }
 }
 
