@@ -166,6 +166,10 @@
   @media (--desktop) {
     margin-left: -3.7em;
   }
+
+  @media (--mobile) {
+    margin-left: -2em;
+  }
 }
 
 .service-block__stage-number.active {
