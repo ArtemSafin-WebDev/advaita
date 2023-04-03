@@ -128,18 +128,6 @@
 
 .services__info-list-item {
   counter-increment: ordered-list;
-
-  @media (--mobile) {
-    &:nth-child(3n + 1) {
-      justify-self: flex-start;
-    }
-    &:nth-child(3n + 2) {
-      justify-self: center;
-    }
-    &:nth-child(3n + 3) {
-      justify-self: flex-end;
-    }
-  }
 }
 
 .services__info-card {
@@ -159,6 +147,22 @@
       text-transform: uppercase;
       font-family: var(--supply);
       border-bottom: 1px dashed #b0b0b0;
+    }
+  }
+
+  @media (--mobile) {
+    flex-direction: row;
+    align-items: flex-start;
+    &::before {
+      content: counter(ordered-list, decimal-leading-zero);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.5rem;
+      line-height: 130%;
+      color: rgba(255, 255, 255, 0.4);
+      font-family: var(--supply);
+      width: 3.2rem;
+      flex-shrink: 0;
     }
   }
 }

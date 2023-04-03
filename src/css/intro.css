@@ -46,7 +46,7 @@
 
   @media (--mobile) {
     padding-top: 7rem;
-    padding-bottom: 2rem;
+    padding-bottom: 3.6rem;
     min-height: 100vh;
     min-height: 100svh;
   }

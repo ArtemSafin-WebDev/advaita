@@ -22,7 +22,7 @@ export default function revealImages(selector = ".js-image-to-reveal") {
       scaleY: 1,
       duration: 1,
       ease: "power2.out",
-      delay: 0,
+      delay: 0.4,
     });
   });
 }
